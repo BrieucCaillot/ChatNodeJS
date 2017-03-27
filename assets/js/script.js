@@ -38,3 +38,5 @@ document.addEventListener('keydown', function(e){
 });
 
 document.getElementsByTagName('button')[0].addEventListener('click', sendmessage);
+
+

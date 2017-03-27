@@ -195,3 +195,65 @@ section:first-child input.question:invalid ~ input[type="submit"], textarea.ques
     opacity: 1;
   }
 }
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+.animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* KEYFRAMES */
+
+/* FADE IN UP H1 HEADER */
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+
+/* INPUT */
+
+@-webkit-keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
