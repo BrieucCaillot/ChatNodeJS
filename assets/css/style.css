@@ -1,4 +1,27 @@
 * {
-	background-color : red;
-	color: white;
+	font-family: avenir;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+ul {
+    text-align: center;
+}
+#chat {
+    width: 100vw;
+    height: 90vh;
+}
+#write {
+    width: 100vw auto;
+}
+#write input {
+    width: 96vw;
+}
+#write button {
+    border-radius: 0;
 }
