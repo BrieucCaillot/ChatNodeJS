@@ -14,14 +14,33 @@ ul {
 }
 #chat {
     width: 100vw;
-    height: 90vh;
+    height: 80vh;
 }
 #write {
-    width: 100vw auto;
+    width: 100vw;
+    height:5vh;
+    padding: 10px;
+    margin:0 auto;
+    border: solid 2px;
 }
 #write input {
-    width: 96vw;
+    width: 90vw;
+    height: 40px;
+    font-size: 20px;
+    display: inline-block;
+    background-color: lightcyan;
+    border: none;
+    margin: 0;
+}
+#write input:focus{
+    outline: none;
 }
 #write button {
     border-radius: 0;
+    height: 40px;
+    display: inline-block;
+    width: 3vw;
+    background-color: lightcyan;
+    border: none;
+    margin: 0;
 }
