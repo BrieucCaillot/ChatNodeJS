@@ -1,4 +1,11 @@
 * {
-	background-color : red;
-	color: white;
+	font-family: avenir;
+}
+
+h1{
+    text-align: center;
+}
+
+ul {
+    text-align: center;
 }
