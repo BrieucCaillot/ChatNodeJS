@@ -19,7 +19,7 @@ socket.on('newmessage', function(newmessage){
 });
 
 function sendmessage(){
-   var input = document.getElementsByTagName('input')[0];
+   var input = document.getElementsByTagName('input')[1];
    
    console.log(input.value);
    
@@ -30,6 +30,26 @@ function sendmessage(){
    socket.emit('message', input.value);
    input.value = ' ';
 }
+
+$(document).ready(function chatAccess() {
+    $("body").css("overflow-y", "hidden");
+    
+    var hideLogInput = function(){
+        $("#logInput").fadeOut();
+        $("body").css("overflow-y", "visible");
+    };
+
+    setTimeout(hideLogInput, 1000);
+
+    var hidelog = function(){
+        $("#log").fadeOut();
+    };
+
+    setTimeout(hidelog, 1000);
+    
+    
+    
+});
 
 document.addEventListener('keydown', function(e){
    if (e.keyCode == 13){

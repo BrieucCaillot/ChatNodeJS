@@ -5,8 +5,23 @@
 	<title>Home Page</title>
 	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	
 </head>
 <body>
+    <!-- J'ai rajouté une div "login" qui est la page noir que tu vois au début, il faut y rajouter l'input "name" exactement dans le même style que "message" -->
+    <!-- Il faut aussi que je trouve pourquoi lorsqu'on fait entré pour envoyer un message la page noir se reload -->
+    <div id="login">
+        <div id="log"></div>
+        <div id="logInput">
+            <input id="name" type="text" name="name" class="question" required autocomplete="off" />
+				<label for="name">
+					<span>
+						What's your name?
+					</span>
+				</label>
+        </div>
+    </div>
 
 	<header>
 		<h1 class="fadeInUp animated">AGORA</h1>
@@ -15,13 +30,6 @@
 	<main>
 		<section>
 			<form>
-				<input id="name" type="text" name="name" class="question" required autocomplete="off" />
-				<label for="name">
-					<span>
-						What's your name?
-					</span>
-				</label>
-
 				<input id="message" type="text" name="name" class="question" required autocomplete="off" />
 				<label for="msg">
 					<span>
@@ -30,7 +38,6 @@
 				</label>
 			</form>
 		</section>
-
 		<section>
 			<div id="chat">
 				<ul></ul>
