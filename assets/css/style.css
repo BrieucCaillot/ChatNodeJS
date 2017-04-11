@@ -15,13 +15,18 @@ header {
     width: 100%;
     text-align: center;
     display: table;
-    margin-bottom: 5%;
+    margin: 12 % 0 5% 0;
 }
 
-h1{
+.headerfix {
     display:table-cell; 
     vertical-align:middle;
     font-size: 60px;
+}
+
+h1 {
+    font-size: 100px;
+    margin: 0 auto;
 }
 
 main {
@@ -30,10 +35,32 @@ main {
     margin: 0 auto;
 }
 
+/* INPUT SECTION */
+
+section:first-child {
+    margin: 0 auto;
+    width: 35%;
+}
+
+/* YOUR NAME DIV */
+
+section:first-child #name {
+
+}
+
+/* YOUR MESSAGE DIV */
+
+section:first-child #messagediv {
+  
+}
+
+/* CONVERSATION SECTION */ 
+
 section:last-child {
     height: inherit;
-    width: 50%;
-    float: right;
+    width: 80%;
+    margin: 0 auto;
+    
 }
  
 #chat {
@@ -54,12 +81,9 @@ section:last-child {
     list-style-type: none;
 }
 
-section:first-child {
-    width: 50%;
-    float: left;
-}
+/* INPUT STYLE */
 
-section:first-child 
+section 
 input,
 span,
 label,
@@ -72,13 +96,14 @@ textarea {
   font-size: 22px;
 }
 
-section:first-child textarea:focus,
+section textarea:focus,
 input:focus {
   outline: 0;
 }
+
 /* Question */
 
-section:first-child input.question,
+section input.question,
 textarea.question {
   font-size: 48px;
   border-radius: 2px;
@@ -89,62 +114,51 @@ textarea.question {
   transition: padding-top 0.2s ease, margin-top 0.2s ease;
   overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
 }
+
+section input.question + label,
+textarea.question + label {
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+    width: 10%;
+    border-top: 1px solid red;
+    -webkit-transition: width 0.4s ease;
+    transition: width 0.4s ease;
+    height: 0px;
+}
+
+section input.question:focus + label,
+textarea.question:focus + label {
+    width: 80%;
+}
+
+section input.question:focus,
+input.question:valid {
+    padding-top: 35px;
+}
+
+section textarea.question:valid,
+textarea.question:focus {
+    margin-top: 35px;
+}
+
+section input.question:focus + label > span,
+input.question:valid + label > span {
+    top: -100px;
+    font-size: 22px;
+    color: #333;
+}
+
 /* Underline and Placeholder */
 
-section:first-child input.question + label,
-textarea.question + label {
-  display: block;
-  position: relative;
-  white-space: nowrap;
-  padding: 0;
-  margin: 0;
-  width: 10%;
-  border-top: 1px solid red;
-  -webkit-transition: width 0.4s ease;
-  transition: width 0.4s ease;
-  height: 0px;
-}
-
-section:first-child input.question:focus + label,
+section input.question:focus + label,
 textarea.question:focus + label {
-  width: 80%;
+  width: 100%;
 }
 
-section:first-child input.question:focus,
-input.question:valid {
-  padding-top: 35px;
-}
-
-section:first-child textarea.question:valid,
-textarea.question:focus {
-  margin-top: 35px;
-}
-
-section:first-child input.question:focus + label > span,
-input.question:valid + label > span {
-  top: -100px;
-  font-size: 22px;
-  color: #333;
-}
-
-section:first-child textarea.question:focus + label > span,
-textarea.question:valid + label > span {
-  top: -150px;
-  font-size: 22px;
-  color: #333;
-}
-
-section:first-child input.question:valid + label,
-textarea.question:valid + label {
-  border-color: green;
-}
-
-section:first-child input.question:invalid,
-textarea.question:invalid {
-  box-shadow: none;
-}
-
-section:first-child input.question + label > span,
+section input.question + label > span,
 textarea.question + label > span {
   margin: 0;
   position: absolute;
@@ -157,7 +171,7 @@ textarea.question + label > span {
   transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
 }
 
-section:first-child input[type="submit"] {
+section input[type="submit"] {
   -webkit-transition: opacity 0.2s ease, background 0.2s ease;
   transition: opacity 0.2s ease, background 0.2s ease;
   display: block;
@@ -165,35 +179,6 @@ section:first-child input[type="submit"] {
   margin: 10px 0 0 0;
   padding: 10px;
   cursor: pointer;
-}
-
-section:first-child input[type="submit"]:hover {
-  background: #EEE;
-}
-
-section:first-child input[type="submit"]:active {
-  background: #999;
-}
-
-section:first-child input.question:valid ~ input[type="submit"], textarea.question:valid ~ input[type="submit"] {
-  -webkit-animation: appear 1s forwards;
-  animation: appear 1s forwards;
-}
-
-section:first-child input.question:invalid ~ input[type="submit"], textarea.question:invalid ~ input[type="submit"] {
-  display: none;
-}
-
-@-webkit-keyframes appear {
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes appear {
-  100% {
-    opacity: 1;
-  }
 }
 
 .fadeInUp {
@@ -240,7 +225,6 @@ section:first-child input.question:invalid ~ input[type="submit"], textarea.ques
   }
 }
 
-
 /* INPUT */
 
 @-webkit-keyframes appear {
@@ -254,6 +238,3 @@ section:first-child input.question:invalid ~ input[type="submit"], textarea.ques
     opacity: 1;
   }
 }
-
-
-

@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Home Page</title>
 	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script type="text/javascript" src="../static/js/script.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
 </head>
 <body>
@@ -15,24 +17,30 @@
 	<main>
 		<section>
 			<form>
-				<input id="name" type="text" name="name" class="question" required autocomplete="off" />
-				<label for="name">
-					<span>
-						What's your name?
-					</span>
-				</label>
-
-				<input id="message" type="text" name="name" class="question" required autocomplete="off" />
-				<label for="msg">
-					<span>
-						What's your message?
-					</span>
-				</label>
+				<div id="namediv">
+					<input id="name" type="text" name="name" class="question" required autocomplete="off" />
+					<label for="name">
+						<span>
+							What's your name?
+						</span>
+					</label>
+				</div>
+				<div id="messagediv">
+					<input id="message" type="text" name="name" class="question" required autocomplete="off" />
+					<label for="msg">
+						<span>
+							What's your message?
+						</span>
+					</label>
+				</div>
 			</form>
 		</section>
 
+		
+
 		<section>
 			<div id="chat">
+				
 				<ul></ul>
 			</div>
 		</section>
@@ -44,6 +52,6 @@
 	</footer>
 
 
-	<script type="text/javascript" src="../static/js/script.js"></script>
+	<script type="text/javascript" src="../static/js/client.js"></script>
 </body>
 </html> 
