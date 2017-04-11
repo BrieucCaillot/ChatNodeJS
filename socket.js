@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
-var port = 1337;
+var port = 8080;
 
 io.on('connection', function(socket){
 	console.log('new socket');
@@ -43,8 +43,8 @@ app.get('/', function(req, res){
 	res.sendFile(__dirname + '/html/socket.html');
 });
 
-server.listen(1337);
-	console.log('Server listening on port 1337');
+server.listen(port);
+	console.log('Server listening on port ' + port);
 
 
 

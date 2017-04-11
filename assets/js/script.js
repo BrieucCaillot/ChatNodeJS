@@ -1,4 +1,4 @@
-var socket = io('http://localhost:1337');
+var socket = io('https://chatnodejs-betournator.c9users.io/');
 
 socket.on('connect', function(){
 	console.log(socket.id);
