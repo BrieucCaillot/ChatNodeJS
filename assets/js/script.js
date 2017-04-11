@@ -10,7 +10,7 @@ socket.on('response', function(data){
 });
 
 socket.on('newmessage', function(newmessage){
-	console.log('newmessage', newmessage);
+	console.log('New message :', newmessage);
 
 	var li = document.createElement('li');
 	li.innerHTML = newmessage;
@@ -19,19 +19,17 @@ socket.on('newmessage', function(newmessage){
 });
 
 function sendmessage(){
-   var input = document.getElementsByTagName('input')[1];
-   
-   console.log(input.value);
+   var input = document.getElementsByTagName('input')[0];
    
    if (input.value.length <= 0){
        return alert('Please write something');
    }
 
    socket.emit('message', input.value);
-   input.value = ' ';
+   input.value = '';
 }
 
-$(document).ready(function chatAccess() {
+/*$(document).ready(function chatAccess() {
     $("body").css("overflow-y", "hidden");
     
     var hideLogInput = function(){
@@ -49,7 +47,7 @@ $(document).ready(function chatAccess() {
     
     
     
-});
+});*/
 
 document.addEventListener('keydown', function(e){
    if (e.keyCode == 13){
