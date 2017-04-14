@@ -9,38 +9,40 @@ socket.on('response', function(data){
 	console.log(data);
 });
 
+
+
+
 /* INPUT NAME */ 
 
-/*socket.on('newname', function(newname){
-    console.log('name', newname);  
+socket.on('newname', function(newname){
+    console.log('newname', newname);
 
-    var p = document.createElement('p');
-    p.innerHTML = newname;
- 
-    document.getElementById('chat').appendChild(p);
+    var li = document.createElement('li');
+    li.innerHTML = newname;
+
+    document.getElementsByTagName('ul')[0].appendChild(li);
 });
 
 function sendname(){
-   var input = document.getElementById('name');
+   var inputname = document.getElementById('name');
    
-   console.log(input.value);
+   console.log(inputname.value);
    
-   if (input.value.length <= 0){
-       return alert('Please write something');
+   if (inputname.value.length <= 0){
+       return alert('Please write your name');
    }
 
-   socket.emit('name', input.value);
-   input.value = ' ';
+   socket.emit('newname', inputname.value);
+   inputname.value = ' ';
 }
 
-document.addEventListener('keydown', function(alt){
-   if (alt.keyCode == 18){
+document.addEventListener('keydownname', function(enter){
+   if (enter.keyCode == 13){
        sendname();
    }
 });
 
-document.getElementsByTagName('button')[0].addEventListener('click', sendname);*/
-
+document.getElementsByTagName('button')[0].addEventListener('click', sendname);
 
 
 /* SEND MESSAGE */
@@ -51,30 +53,28 @@ socket.on('newmessage', function(newmessage){
 	var li = document.createElement('li');
 	li.innerHTML = newmessage;
 
-    var firstname = document.getElementById('name');
-
 	document.getElementsByTagName('ul')[0].appendChild(li);
 });
 
 function sendmessage(){
-   var input = document.getElementById('message');
+   var inputmessage = document.getElementById('message');
    
-   console.log(input.value);
+   console.log(inputmessage.value);
    
-   if (input.value.length <= 0){
-       return alert('Please write something');
+   if (inputmessage.value.length <= 0){
+       return alert('Please write your message');
    }
 
-   socket.emit('message', firstname.value + input.value);
-   input.value = ' ';
+   socket.emit('newmessage', inputmessage.value);
+   inputmessage.value = ' ';
 }
 
-document.addEventListener('keydown', function(enter){
+document.addEventListener('keydownmessage', function(enter){
    if (enter.keyCode == 13){
        sendmessage();
    }
 });
 
-document.getElementsByTagName('button')[0].addEventListener('click', sendmessage);
+document.getElementsByTagName('button')[1].addEventListener('click', sendmessage);
 
 

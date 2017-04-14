@@ -16,23 +16,32 @@
 
 	<main>
 		<section>
-			<form>
+			<form name="name" novalidate>
 				<div id="namediv">
 					<input id="name" type="text" name="name" class="question" required autocomplete="off" />
-					<label for="name">
+					<label>
 						<span>
 							What's your name?
 						</span>
 					</label>
 				</div>
+				<button>
+					click1
+				</button>
+			</form>
+
+			<form name="message" novalidate>
 				<div id="messagediv">
-					<input id="message" type="text" name="name" class="question" required autocomplete="off" />
-					<label for="msg">
+					<input id="message" type="text" name="message" class="question" required autocomplete="off" />
+					<label>
 						<span>
 							What's your message?
 						</span>
 					</label>
 				</div>
+				<button>
+					click2
+				</button>
 			</form>
 		</section>
 
@@ -40,7 +49,7 @@
 
 		<section>
 			<div id="chat">
-				
+
 				<ul></ul>
 			</div>
 		</section>

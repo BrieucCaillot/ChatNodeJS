@@ -5,13 +5,24 @@ var io = require('socket.io')(server);
 var port = 1337;
 
 io.on('connection', function(socket){
-	console.log('new socket');
+	console.log('new socket name');
 
-	socket.on('message', function(message){
-		console.log('received', message);
-		io.emit('newmessage', message);
+	socket.on('newname', function(newname){
+		console.log('received', newname);
+		io.emit('newname', newname);
 	});
 });
+
+io.on('connection', function(socket){
+	console.log('new socket message');
+
+	socket.on('newmessage', function(newmessage){
+		console.log('received', newmessage);
+		io.emit('newmessage', newmessage);
+	});
+});
+
+
 
 app.use('/static/css', express.static(__dirname + '/assets/css'));
 app.use('/static/js', express.static(__dirname + '/assets/js'));
