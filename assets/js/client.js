@@ -17,10 +17,10 @@ socket.on('response', function(data){
 socket.on('newname', function(newname){
     console.log('newname', newname);
 
-    var li = document.createElement('li');
-    li.innerHTML = newname;
+    var p = document.createElement('p');
+    p.innerHTML = newname + ' :'; 
 
-    document.getElementsByTagName('ul')[0].appendChild(li);
+    document.getElementById('chat').appendChild(p);
 });
 
 function sendname(){
