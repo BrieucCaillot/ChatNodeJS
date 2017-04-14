@@ -9,19 +9,24 @@
 	
 </head>
 <body>
-    <!-- J'ai rajouté une div "login" qui est la page noir que tu vois au début, il faut y rajouter l'input "name" exactement dans le même style que "message" -->
-    <!-- Il faut aussi que je trouve pourquoi lorsqu'on fait entré pour envoyer un message la page noir se reload -->
-    <!--<div id="login">
+   
+   <!-- MASK PAGE FOR LOGIN -->
+   
+    <div id="login">
         <div id="log"></div>
         <div id="logInput">
-            <input id="name" type="text" name="name" class="question" required autocomplete="off" />
-				<label for="name">
-					<span>
-						What's your name?
-					</span>
-				</label>
+            <section>
+                <form>
+                    <input id="name" type="text" name="name" class="question" required autocomplete="off" />
+                    <label for="name">
+                        <span>
+                            What's your name?
+                        </span>
+                    </label>
+                </form>
+            </section>
         </div>
-    </div>-->
+    </div>
 
 	<header>
 		<h1 class="fadeInUp animated">AGORA</h1>
@@ -30,7 +35,7 @@
 	<main>
 		<section>
 			<form>
-				<input id="message" type="text" name="name" class="question" required autocomplete="off" />
+				<input id="message" type="text" class="question" required autocomplete="off"/>
 				<label for="msg">
 					<span>
 						What's your message?
@@ -49,7 +54,6 @@
 	<footer>
 
 	</footer>
-
 
 	<script type="text/javascript" src="../static/js/script.js"></script>
 </body>

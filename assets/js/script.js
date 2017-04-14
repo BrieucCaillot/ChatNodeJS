@@ -19,17 +19,17 @@ socket.on('newmessage', function(newmessage){
 });
 
 function sendmessage(){
-   var input = document.getElementsByTagName('input')[0];
+   var input = document.getElementsByTagName('input')[1];
    
    if (input.value.length <= 0){
        return alert('Please write something');
    }
 
    socket.emit('message', input.value);
-   input.value = '';
+   input.value = ' ';
 }
 
-/*$(document).ready(function chatAccess() {
+$(document).ready(function chatAccess() {
     $("body").css("overflow-y", "hidden");
     
     var hideLogInput = function(){
@@ -37,24 +37,22 @@ function sendmessage(){
         $("body").css("overflow-y", "visible");
     };
 
-    setTimeout(hideLogInput, 1000);
+    setTimeout(hideLogInput, 200);
 
     var hidelog = function(){
-        $("#log").fadeOut();
+        $("#login").fadeOut();
     };
 
-    setTimeout(hidelog, 1000);
+    setTimeout(hidelog, 500);
     
-    
-    
-});*/
+});
+
+$("form").submit(function (e) {
+            e.preventDefault();
+        });
 
 document.addEventListener('keydown', function(e){
-   if (e.keyCode == 13){
+   if(e.keyCode == 13){
        sendmessage();
    }
 });
-
-document.getElementsByTagName('button')[0].addEventListener('click', sendmessage);
-
-

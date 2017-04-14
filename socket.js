@@ -24,11 +24,3 @@ app.get('/', function(req, res){
 
 server.listen(1337);
 	console.log('Server listening on port 1337');
-
-
-
-
-
-
-
-
