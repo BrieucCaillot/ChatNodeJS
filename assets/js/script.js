@@ -16,6 +16,8 @@ socket.on('newmessage', function(newmessage){
 	li.innerHTML = newmessage;
 
 	document.getElementsByTagName('ul')[0].appendChild(li);
+    
+    $('li').css('float','right');
 });
 
 function sendmessage(){
