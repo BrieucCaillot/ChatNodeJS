@@ -7,58 +7,27 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script type="text/javascript" src="../static/js/script.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+
+	<style>
+            #zone_chat strong {
+                color: white;
+                background-color: black;
+                padding: 2px;
+            }
+    </style>
 </head>
 <body>
 
-	<header>
-		<h1 class="fadeInUp animated">AGORA</h1>
-	</header>
+	<h1>Le super Chat temps réel !</h1>
 
-	<main>
-		<section>
-			<form name="name" novalidate>
-				<div id="namediv">
-					<input id="name" type="text" name="name" class="question" required autocomplete="off" />
-					<label>
-						<span>
-							What's your name?
-						</span>
-					</label>
-				</div>
-				<button>
-					click1
-				</button>
-			</form>
+        <form action="/" method="post" id="formulaire_chat">
+            <input type="text" name="message" id="message" placeholder="Votre message..." size="50" autofocus />
+            <input type="submit" id="envoi_message" value="Envoyer" />
+        </form>
 
-			<form name="message" novalidate>
-				<div id="messagediv">
-					<input id="message" type="text" name="message" class="question" required autocomplete="off" />
-					<label>
-						<span>
-							What's your message?
-						</span>
-					</label>
-				</div>
-				<button>
-					click2
-				</button>
-			</form>
-		</section>
-
-		
-
-		<section>
-			<div id="chat">
-				
-				<ul></ul>
-			</div>
-		</section>
-
-	</main>
-
-	<footer>
-
-	</footer>
+        <section id="zone_chat">
+            
+        </section>
 
 
 	<script type="text/javascript" src="../static/js/client.js"></script>

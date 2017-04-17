@@ -1,80 +1,31 @@
-var socket = io('http://localhost:1337');
+// Connexion à socket.io
+            var socket = io.connect('http://localhost:8080');
 
-socket.on('connect', function(){
-	console.log(socket.id);
-});
+            // On demande le pseudo, on l'envoie au serveur et on l'affiche dans le titre
+            var pseudo = prompt('Quel est votre pseudo ?');
+            socket.emit('nouveau_client', pseudo);
+            document.title = pseudo + ' - ' + document.title;
 
-socket.on('response', function(data){
-	console.log('Client: Response received:');
-	console.log(data);
-});
+            // Quand on reçoit un message, on l'insère dans la page
+            socket.on('message', function(data) {
+                insereMessage(data.pseudo, data.message)
+            })
 
+            // Quand un nouveau client se connecte, on affiche l'information
+            socket.on('nouveau_client', function(pseudo) {
+                $('#zone_chat').prepend('<p><em>' + pseudo + ' a rejoint le Chat !</em></p>');
+            })
 
-
-
-/* INPUT NAME */ 
-
-socket.on('newname', function(newname){
-    console.log('newname', newname);
-
-    var p = document.createElement('p');
-    p.innerHTML = newname + ' :'; 
-
-    document.getElementById('chat').appendChild(p);
-});
-
-function sendname(){
-   var inputname = document.getElementById('name');
-   
-   console.log(inputname.value);
-   
-   if (inputname.value.length <= 0){
-       return alert('Please write your name');
-   }
-
-   socket.emit('newname', inputname.value);
-   inputname.value = ' ';
-}
-
-document.addEventListener('keydownname', function(enter){
-   if (enter.keyCode == 13){
-       sendname();
-   }
-});
-
-document.getElementsByTagName('button')[0].addEventListener('click', sendname);
-
-
-/* SEND MESSAGE */
-
-socket.on('newmessage', function(newmessage){
-	console.log('newmessage', newmessage);
-
-	var li = document.createElement('li');
-	li.innerHTML = newmessage;
-
-	document.getElementsByTagName('ul')[0].appendChild(li);
-});
-
-function sendmessage(){
-   var inputmessage = document.getElementById('message');
-   
-   console.log(inputmessage.value);
-   
-   if (inputmessage.value.length <= 0){
-       return alert('Please write your message');
-   }
-
-   socket.emit('newmessage', inputmessage.value);
-   inputmessage.value = ' ';
-}
-
-document.addEventListener('keydownmessage', function(enter){
-   if (enter.keyCode == 13){
-       sendmessage();
-   }
-});
-
-document.getElementsByTagName('button')[1].addEventListener('click', sendmessage);
-
-
+            // Lorsqu'on envoie le formulaire, on transmet le message et on l'affiche sur la page
+            $('#formulaire_chat').submit(function () {
+                var message = $('#message').val();
+                socket.emit('message', message); // Transmet le message aux autres
+                insereMessage(pseudo, message); // Affiche le message aussi sur notre page
+                $('#message').val('').focus(); // Vide la zone de Chat et remet le focus dessus
+                return false; // Permet de bloquer l'envoi "classique" du formulaire
+            });
+            
+            // Ajoute un message dans la page
+            function insereMessage(pseudo, message) {
+                $('#zone_chat').prepend('<p><strong>' + pseudo + '</strong> ' + message + '</p>');
+            }
