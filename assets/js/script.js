@@ -21,6 +21,7 @@ socket.on('newmessage', function(newmessage){
 
     
     //$('li').css('float','right');
+    //$('li').css('clear','both');
 });
 
 function sendmessage(){
@@ -31,7 +32,7 @@ function sendmessage(){
    }
 
    socket.emit('message', input.value);
-   input.value = ' ';
+   input.value = "";
 }
 
 $(document).ready(function chatAccess() {

@@ -75,9 +75,10 @@ section:last-child {
 #chat ul li {
     padding:          10px 20px;
     margin:           20px 40px;
-    width:            30%;
-    background-color: white;
-    color:            black;
+    width:            35%;
+    background-color: black;
+    border: solid 1px white;
+    color:            white;
     border-radius:    20px 20px 20px 0px;
     list-style-type:  none;
     
