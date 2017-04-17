@@ -17,7 +17,10 @@ socket.on('newmessage', function(newmessage){
 
 	document.getElementsByTagName('ul')[0].appendChild(li);
     
-    $('li').css('float','right');
+    $('#chat').scrollTop($('#chat')[0].scrollHeight);
+
+    
+    //$('li').css('float','right');
 });
 
 function sendmessage(){

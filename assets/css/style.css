@@ -34,51 +34,53 @@ body {
 
 header {
     background-color: black;
-    color: white;
-    height: 90px;
-    width: 100%;
-    text-align: center;
-    display: table;
-    margin-bottom: 5%;
+    color:            white;
+    height:           90px;
+    width:            100%;
+    text-align:       center;
+    display:          table;
+    margin-bottom:    5%;
 }
 
 h1{
-    display:table-cell; 
-    vertical-align:middle;
-    font-size: 60px;
-    font-family: avenir next;
-    font-weight: 100;
+    display:        table-cell; 
+    vertical-align: middle;
+    font-size:      60px;
+    font-family:    avenir next;
+    font-weight:    100;
 }
 
 main {
     height: 500px;
-    width: 90%;
+    width:  90%;
     margin: 0 auto;
 }
 
 section:last-child {
     height: inherit;
-    width: 50%;
-    float: right;
+    width:  50%;
+    float:  right;
 }
  
 #chat {
-    width: 100%;
-    height: inherit;
-    float: right;
-    overflow-y: scroll;
-    background-color: white;
-    border-radius: 20px;
+    width:            100%;
+    height:           inherit;
+    float:            right;
+    overflow-y:       scroll;
+    background-color: black;
+    border:           solid 1px white;
+    border-radius:    20px;
 }
 
 #chat ul li {
-    padding: 10px 20px;
-    margin: 20px 40px;
-    width: 30%;
-    background-color: black;
-    color: white;
-    border-radius: 20px 20px 20px 0px;
-    list-style-type: none;
+    padding:          10px 20px;
+    margin:           20px 40px;
+    width:            30%;
+    background-color: white;
+    color:            black;
+    border-radius:    20px 20px 20px 0px;
+    list-style-type:  none;
+    
 }
 
 section:first-child {
