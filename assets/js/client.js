@@ -8,7 +8,7 @@
 
             // Quand on reçoit un message, on l'insère dans la page
             socket.on('message', function(data) {
-                insereMessage(data.pseudo, data.message)
+                insereMessage(data.pseudo, ":", data.message)
             })
 
             // Quand un nouveau client se connecte, on affiche l'information
@@ -27,5 +27,5 @@
             
             // Ajoute un message dans la page
             function insereMessage(pseudo, message) {
-                $('#zone_chat').prepend('<p><strong>' + pseudo + '</strong> ' + message + '</p>');
+                $('#zone_chat ul').append('<li><strong>' + pseudo + '</strong> ' + message + '</li>');
             }
