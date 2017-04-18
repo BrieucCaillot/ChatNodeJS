@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 			"color": '#fff',
 			"background-color": 'skyblue'
 		});
-		$("#gif img").css("src=", "../static/images/wow.gif");
+		/*$("#gif img").css("src=", "../static/images/wow.gif");*/
 	});
 
 	$("#blue").click(function(){
