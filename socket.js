@@ -4,6 +4,7 @@ var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var ent = require('ent');
 var port = 1337;
+var fs = require('fs');
 
 app.use('/static/css', express.static(__dirname + '/assets/css'));
 app.use('/static/js', express.static(__dirname + '/assets/js'));
@@ -30,7 +31,7 @@ io.sockets.on('connection', function (socket, pseudo) {
 });
 
 server.listen(port);
-	console.log('Server listening on port 1337');
+	console.log('Server listening on port' + port);
 
 
 
