@@ -22,7 +22,7 @@ $('#formulaire_chat').submit(function () {
 });
 
 function insereMessage(pseudo, message) {
-    $('#zone_chat ul').append('<li><strong>' + pseudo + '</strong> ' + message + '</li>');
+    $('#zone_chat ul').append('<li><strong>' + pseudo + '</strong> ' + " : " + message + '</li>');
    
     $('#zone_chat').scrollTop($('#zone_chat')[0].scrollHeight);
 }
