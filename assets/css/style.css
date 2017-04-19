@@ -3,6 +3,7 @@ body {
     padding: 0;
     font-family: avenir;
     background-color: #000;
+    overflow: hidden;
 }
 
 textarea:focus, input:focus{
@@ -134,4 +135,8 @@ input::placeholder {
     background-color: red;
     width: 40px;
     height: 40px;
+}
+
+video {
+    display: none;
 }
