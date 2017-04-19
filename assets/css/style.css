@@ -1,61 +1,137 @@
-* {
-	font-family: avenir;
-    overflow: hidden;
+body {
     margin: 0;
     padding: 0;
+    font-family: avenir;
+    background-color: #000;
 }
 
-h1{
-    text-align: center;
-}
-
-header {
-    background-color: bisque;
-    height: 50px;
-}
-#chat {
-    width: 100vw;
-    height: 80vh;
-    margin: 0 auto;
-}
-
-#chat ul {
-    text-align: left;
-    right: 0;
-}
-#chat ul li {
-    padding: 5px 20px;
-    margin: 5px 10px;
-    width: 30%;
-    background-color: bisque;
-    border-radius: 20px 20px 20px 0px;
-}
-
-#write {
-    width: 100vw;
-    height:6vh;
-    bottom: 0px;
-    position: absolute;
-}
-#write input {
-    width: 90vw;
-    height: 6vh;
-    font-size: 20px;
-    float: left;
-    background-color: bisque;
-    border: none;
-    margin: 0;
-    padding: 0 20px;
-}
-#write input:focus{
+textarea:focus, input:focus{
     outline: none;
 }
-#write button {
-    border-radius: 0;
-    height: 6vh;
+
+* : focus {
+    outline: none;
+}
+
+header{
+    width: 100%;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-size: 85px;
+    font-weight: 100;
+}
+
+main {
+    margin-top: 3%
+}
+
+.transition {
+    -webkit-transition: 1s; /* Safari */
+        transition: 1s;
+}
+
+/* CHAT */
+
+#zone_chat {
+    height: 500px;
+    width: 50%;
+    background-color: #FFF;
     float: left;
-    width: 9vw;
-    background-color: bisque;
-    border: none;
-    margin: 0;
+    margin-left: 8%;
+    border-radius: 30px 30px 0px 0px;
+    overflow-y: auto;
+}
+
+#zone_chat strong {
+    color: #fff;
+    background-color: black;
+    padding: 2px;
+}
+
+h2 {
+    text-align: center;
+    margin: 0 auto;
+    margin: 20px;
+}
+
+li {
+    padding: 8px 0px;
+    list-style-type: none;
+}
+
+/* INPUT */ 
+
+input {
+    width: 47.787%;
+    height: 40px;
+    margin-left: 8%;
+    padding-left: 2%;
+}
+
+input: focus {
+    outline-width: 0;
+}
+
+input::placeholder {
+    font-size: 15px;
+}
+
+/* WOW GIF */
+
+#gif {
+    position: absolute;
+    top: 75%;
+    right: 0%;
+}
+
+/* ADD IMAGE */
+
+#addimage {
+    margin: 3% 0px 0px 10%;
+    float: left;
+}
+
+#addimage img {
+    width: 40px;
+}
+
+/* STYLIZING */
+
+#stylizing {
+    width: 20vw;
+    background-color: #FFF;
+    height: 545px;
+    float: right;
+    margin-right: 8%;
+}
+
+#stylizing div {
+    margin: 23px 25px;
+}
+
+#stylizing #skyblue {
+    background-color: skyblue;
+    width: 40px;
+    height: 40px;
+}
+
+#stylizing #blue {
+    background-color: blue;
+    width: 40px;
+    height: 40px;
+}
+
+#stylizing #emo {
+    background-color: #000;
+    width: 40px;
+    height: 40px;
+}
+
+#stylizing #red {
+    background-color: red;
+    width: 40px;
+    height: 40px;
 }
