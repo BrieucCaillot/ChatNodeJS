@@ -7,6 +7,18 @@ jQuery(document).ready(function($) {
 			"color": '#fff',
 			"background-color": 'skyblue'
 		});
+		
+		$("video").css("display", "block");
+
+		var vid = document.getElementsByTagName('video')[0]; 
+		vid.play(); 
+
+		var videoend = function(){
+        	$("video").fadeOut();
+        	$("video").attr("muted", "true");
+    	};
+
+    	setTimeout(videoend, 4500);
 		/*$("#gif img").css("src=", "../static/images/wow.gif");*/
 	});
 
@@ -17,6 +29,18 @@ jQuery(document).ready(function($) {
 			"color": '#fff',
 			"background-color": 'blue'
 		});
+
+		$("video").css("display", "block");
+
+		var vid = document.getElementsByTagName('video')[0]; 
+		vid.play(); 
+
+		var videoend = function(){
+        	$("video").fadeOut();
+        	$("video").attr("muted", "true");
+    	};
+
+    	setTimeout(videoend, 4500);
 	});
 
 	$("#emo").click(function(){
@@ -26,6 +50,18 @@ jQuery(document).ready(function($) {
 			"color": '#fff',
 			"background-color": '#000'
 		});
+
+		$("video").css("display", "block");
+
+		var vid = document.getElementsByTagName('video')[0]; 
+		vid.play(); 
+
+		var videoend = function(){
+        	$("video").fadeOut();
+        	$("video").attr("muted", "true");
+    	};
+
+    	setTimeout(videoend, 4500);
 	});
 
 	$("#red").click(function(){
@@ -35,5 +71,17 @@ jQuery(document).ready(function($) {
 			"color": '#fff',
 			"background-color": 'red'
 		});
+
+		$("video").css("display", "block");
+
+		var vid = document.getElementsByTagName('video')[0]; 
+		vid.play(); 
+
+		var videoend = function(){
+        	$("video").fadeOut();
+        	$("video").attr("muted", "true");
+    	};
+
+    	setTimeout(videoend, 4500);
 	});
 });
