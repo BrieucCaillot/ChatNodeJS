@@ -1,247 +1,143 @@
-* {
-    font-family: avenir;
+body {
     margin: 0;
     padding: 0;
+    font-family: avenir;
+    background-color: #000;
+    overflow: hidden;
 }
 
-body {
-    list-style-type: none;
-    background-color: skyblue;
+textarea:focus, input:focus{
+    outline: none;
 }
 
-header {
-    background-color: skyblue;
-    height: 90px;
+* : focus {
+    outline: none;
+}
+
+header{
     width: 100%;
-    text-align: center;
-    display: table;
-    margin: 12 % 0 5% 0;
-}
-
-.headerfix {
-    display:table-cell; 
-    vertical-align:middle;
-    font-size: 60px;
+    color: white;
 }
 
 h1 {
-    font-size: 100px;
-    margin: 0 auto;
+    text-align: center;
+    font-size: 85px;
+    font-weight: 100;
 }
 
 main {
+    margin-top: 3%
+}
+
+.transition {
+    -webkit-transition: 1s; /* Safari */
+        transition: 1s;
+}
+
+/* CHAT */
+
+#zone_chat {
     height: 500px;
-    width: 1200px;
+    width: 50%;
+    background-color: #FFF;
+    float: left;
+    margin-left: 8%;
+    border-radius: 30px 30px 0px 0px;
+    overflow-y: auto;
+}
+
+#zone_chat strong {
+    color: #fff;
+    background-color: black;
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: center;
     margin: 0 auto;
+    margin: 20px;
 }
 
-/* INPUT SECTION */
-
-section:first-child {
-    margin: 0 auto;
-    width: 35%;
-}
-
-/* YOUR NAME DIV */
-
-section:first-child #name {
-
-}
-
-/* YOUR MESSAGE DIV */
-
-section:first-child #messagediv {
-}
-
-/* CONVERSATION SECTION */ 
-
-section:last-child {
-    height: inherit;
-    width: 80%;
-    margin: 0 auto;
-    
-}
- 
-#chat {
-    width: 100%;
-    height: inherit;
-    float: right;
-    overflow-y: scroll;
-    background-color: white;
-    border-radius: 20px;
-}
-
-#chat ul li {
-    padding: 10px 20px;
-    margin: 20px 40px;
-    width: 30%;
-    background-color: darkseagreen;
-    border-radius: 20px 20px 20px 0px;
+li {
+    padding: 8px 0px;
     list-style-type: none;
 }
 
-#chat p {
-  position: absolute;
-  top: 75%;
-  left: 7%;
-  font-size: 30px;
-  text-transform: uppercase;
+/* INPUT */ 
+
+input {
+    width: 47.787%;
+    height: 40px;
+    margin-left: 8%;
+    padding-left: 2%;
 }
 
-/* INPUT STYLE */
-
-section 
-input,
-span,
-label,
-textarea {
-  font-family: 'Avenir', sans-serif;
-  display: block;
-  margin: 10px;
-  padding: 5px;
-  border: none;
-  font-size: 22px;
+input: focus {
+    outline-width: 0;
 }
 
-section textarea:focus,
-input:focus {
-  outline: 0;
+input::placeholder {
+    font-size: 15px;
 }
 
-/* Question */
+/* WOW GIF */
 
-section input.question,
-textarea.question {
-  font-size: 48px;
-  border-radius: 2px;
-  margin: 0;
-  border: none;
-  width: 80%;
-  background: rgba(0, 0, 0, 0);
-  transition: padding-top 0.2s ease, margin-top 0.2s ease;
-  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+#gif {
+    position: absolute;
+    top: 75%;
+    right: 0%;
 }
 
-section input.question + label,
-textarea.question + label {
-    display: block;
-    position: relative;
-    white-space: nowrap;
-    padding: 0;
-    margin: 0;
-    width: 10%;
-    border-top: 1px solid red;
-    -webkit-transition: width 0.4s ease;
-    transition: width 0.4s ease;
-    height: 0px;
+/* ADD IMAGE */
+
+#addimage {
+    margin: 3% 0px 0px 10%;
+    float: left;
 }
 
-section input.question:focus + label,
-textarea.question:focus + label {
-    width: 80%;
+#addimage img {
+    width: 40px;
 }
 
-section input.question:focus,
-input.question:valid {
-    padding-top: 35px;
+/* STYLIZING */
+
+#stylizing {
+    width: 20vw;
+    background-color: #FFF;
+    height: 545px;
+    float: right;
+    margin-right: 8%;
 }
 
-section textarea.question:valid,
-textarea.question:focus {
-    margin-top: 35px;
+#stylizing div {
+    margin: 23px 25px;
 }
 
-section input.question:focus + label > span,
-input.question:valid + label > span {
-    top: -100px;
-    font-size: 22px;
-    color: #333;
+#stylizing #skyblue {
+    background-color: skyblue;
+    width: 40px;
+    height: 40px;
 }
 
-/* Underline and Placeholder */
-
-section input.question:focus + label,
-textarea.question:focus + label {
-  width: 100%;
+#stylizing #blue {
+    background-color: blue;
+    width: 40px;
+    height: 40px;
 }
 
-section input.question + label > span,
-textarea.question + label > span {
-  margin: 0;
-  position: absolute;
-  color: #8F8F8F;
-  font-size: 48px;
-  top: -66px;
-  left: 0px;
-  z-index: -1;
-  -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+#stylizing #emo {
+    background-color: #000;
+    width: 40px;
+    height: 40px;
 }
 
-section input[type="submit"] {
-  -webkit-transition: opacity 0.2s ease, background 0.2s ease;
-  transition: opacity 0.2s ease, background 0.2s ease;
-  display: block;
-  opacity: 0;
-  margin: 10px 0 0 0;
-  padding: 10px;
-  cursor: pointer;
+#stylizing #red {
+    background-color: red;
+    width: 40px;
+    height: 40px;
 }
 
-.fadeInUp {
-    -webkit-animation-name: fadeInUp;
-    animation-name: fadeInUp;
-}
-
-.animated {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-/* KEYFRAMES */
-
-/* FADE IN UP H1 HEADER */
-
-@-webkit-keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-/* INPUT */
-
-@-webkit-keyframes appear {
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes appear {
-  100% {
-    opacity: 1;
-  }
+video {
+    display: none;
 }
