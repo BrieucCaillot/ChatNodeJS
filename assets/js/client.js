@@ -28,4 +28,7 @@
             // Ajoute un message dans la page
             function insereMessage(pseudo, message) {
                 $('#zone_chat ul').append('<li><strong>' + pseudo + '</strong> ' + message + '</li>');
+               
+                $('#zone_chat').scrollTop($('#zone_chat')[0].scrollHeight);
+
             }
