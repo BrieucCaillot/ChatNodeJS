@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>AGORA - Powerful Chat</title>
 	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="icon" href="../static/images/chat.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script type="text/javascript" src="../static/js/script.js"></script>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
 </head>
 <body>
@@ -15,43 +17,152 @@
 
     <main>
         <section id="zone_chat">
-            <ul>
-                
-            </ul>
+            <ul></ul>
         </section>
 
-        <section id="addimage">
-            <label for="file-input">
-                <img src="https://image.ibb.co/eoiLvk/picture.png"/>
-            </label>
-
-            <input id="file-input" type="file" style="display: none;" />
+        <section id="options">
+            <div id="addimage">
+                <label for="file-input">
+                    <img src="../static/images/image.png"/>
+                </label>
+                <input id="file-input" type="file" style="display: none;" /> 
+            </div>
+            <div id="addemojis">
+                <img src="../static/images/emojis.png" alt="">
+            </div>
+            <div id="emojis" class="unclicked">
+                    <ul class="emoji-list">
+                        <li id="emoji1"><img src="../static/images/emojis/051-angel.svg" class="emoji"></li>
+                        <li id="emoji2"><img src="../static/images/emojis/051-angry-1.svg" class="emoji"></li>
+                        <li id="emoji3"><img src="../static/images/emojis/051-angry.svg" class="emoji"></li>
+                        <li id="emoji4"><img src="../static/images/emojis/051-arrogant.svg" class="emoji"></li>
+                        <li id="emoji5"><img src="../static/images/emojis/051-bored.svg" class="emoji"></li>
+                        <li id="emoji6"><img src="../static/images/emojis/051-confused.svg" class="emoji"></li>
+                    </ul>
+                    <ul class="emoji-list">
+                        <li id="emoji7"><img src="../static/images/emojis/051-cool-1.svg" class="emoji"></li>
+                        <li id="emoji8"><img src="../static/images/emojis/051-cool.svg" class="emoji"></li>
+                        <li id="emoji9"><img src="../static/images/emojis/051-crying-1.svg" class="emoji"></li>
+                        <li id="emoji10"><img src="../static/images/emojis/051-crying-2.svg" class="emoji"></li>
+                        <li id="emoji11"><img src="../static/images/emojis/051-crying.svg" class="emoji"></li>
+                        <li id="emoji12"><img src="../static/images/emojis/051-cute.svg" class="emoji"></li>
+                    </ul>
+                    <ul class="emoji-list">
+                        <li id="emoji13"><img src="../static/images/emojis/051-embarrassed.svg" class="emoji"></li>
+                        <li id="emoji14"><img src="../static/images/emojis/051-emoji.svg" class="emoji"></li>
+                        <li id="emoji15"><img src="../static/images/emojis/051-greed.svg" class="emoji"></li>
+                        <li id="emoji16"><img src="../static/images/emojis/051-happy-1.svg" class="emoji"></li>
+                        <li id="emoji17"><img src="../static/images/emojis/051-happy-2.svg" class="emoji"></li>
+                        <li id="emoji18"><img src="../static/images/emojis/051-happy-3.svg" class="emoji"></li>
+                    </ul>
+                    <ul class="emoji-list">
+                        <li id="emoji19"><img src="../static/images/emojis/051-happy-4.svg" class="emoji"></li>
+                        <li id="emoji20"><img src="../static/images/emojis/051-happy-5.svg" class="emoji"></li>
+                        <li id="emoji21"><img src="../static/images/emojis/051-happy-6.svg" class="emoji"></li>
+                        <li id="emoji22"><img src="../static/images/emojis/051-happy-7.svg" class="emoji"></li>
+                        <li id="emoji23"><img src="../static/images/emojis/051-happy.svg" class="emoji"></li>
+                        <li id="emoji24"><img src="../static/images/emojis/051-in-love.svg" class="emoji"></li>
+                    </ul>
+                    <ul class="emoji-list">
+                        <li id="emoji25"><img src="../static/images/emojis/051-kiss-1.svg" class="emoji"></li>
+                        <li id="emoji26"><img src="../static/images/emojis/051-kiss.svg" class="emoji"></li>
+                        <li id="emoji27"><img src="../static/images/emojis/051-laughing-1.svg" class="emoji"></li>
+                        <li id="emoji28"><img src="../static/images/emojis/051-laughing-2.svg" class="emoji"></li>
+                        <li id="emoji29"><img src="../static/images/emojis/051-laughing.svg" class="emoji"></li>
+                        <li id="emoji30"><img src="../static/images/emojis/051-muted.svg" class="emoji"></li>
+                    </ul>
+                    <ul class="emoji-list">
+                        <li id="emoji31"><img src="../static/images/emojis/051-nerd.svg" class="emoji"></li>
+                        <li id="emoji32"><img src="../static/images/emojis/051-sad-1.svg" class="emoji"></li>
+                        <li id="emoji33"><img src="../static/images/emojis/051-sad-2.svg" class="emoji"></li>
+                        <li id="emoji34"><img src="../static/images/emojis/051-sad.svg" class="emoji"></li>
+                        <li id="emoji35"><img src="../static/images/emojis/051-scare.svg" class="emoji"></li>
+                        <li id="emoji36"><img src="../static/images/emojis/051-serious.svg" class="emoji"></li>
+                    </ul>
+                    <ul class="emoji-list">
+                        <li id="emoji37"><img src="../static/images/emojis/051-shocked.svg" class="emoji"></li>
+                        <li id="emoji38"><img src="../static/images/emojis/051-sick.svg" class="emoji"></li>
+                        <li id="emoji39"><img src="../static/images/emojis/051-sleepy.svg" class="emoji"></li>
+                        <li id="emoji40"><img src="../static/images/emojis/051-smart.svg" class="emoji"></li>
+                        <li id="emoji41"><img src="../static/images/emojis/051-surprised-1.svg" class="emoji"></li>
+                        <li id="emoji42"><img src="../static/images/emojis/051-surprised-2.svg" class="emoji"></li>
+                    </ul>
+                    <ul class="emoji-list">
+                        <li id="emoji43"><img src="../static/images/emojis/051-surprised-3.svg" class="emoji"></li>
+                        <li id="emoji44"><img src="../static/images/emojis/051-surprised-4.svg" class="emoji"></li>
+                        <li id="emoji45"><img src="../static/images/emojis/051-surprised.svg" class="emoji"></li>
+                        <li id="emoji46"><img src="../static/images/emojis/051-suspicious.svg" class="emoji"></li>
+                        <li id="emoji47"><img src="../static/images/emojis/051-tongue.svg" class="emoji"></li>
+                        <li id="emoji48"><img src="../static/images/emojis/051-vain.svg" class="emoji"></li>
+                    </ul>
+                    <ul class="emoji-list">
+                        <li id="emoji49"><img src="../static/images/emojis/051-wink-1.svg" class="emoji"></li>
+                        <li id="emoji50"><img src="../static/images/emojis/051-wink.svg" class="emoji"></li>
+                    </ul>
+            </div>
         </section>
 
         <section id="stylizing">
             <h2>CHANGE BACKGROUND COLOR</h2>
-            <div id="skyblue">
+            <ul>
+                <li id="blue1"></li>
+                <li id="blue2"></li>
+                <li id="blue3"></li>
+                <li id="blue4"></li>
+                <li id="blue5"></li>
+                <li id="orange1"></li>
+                <li id="orange2"></li>
+                <li id="orange3"></li>
+                <li id="orange4"></li>
+                <li id="orange5"></li>
+                <li id="red1"></li>
+                <li id="red2"></li>
+                <li id="red3"></li>
+                <li id="red4"></li>
+                <li id="red5"></li>
+                <li id="green1"></li>
+                <li id="green2"></li>
+                <li id="green3"></li>
+                <li id="green4"></li>
+                <li id="green5"></li>
+                <li id="yellow1"></li>
+                <li id="yellow2"></li>
+                <li id="yellow3"></li>
+                <li id="yellow4"></li>
+                <li id="yellow5"></li>
                 
-            </div>
-
-            <div id="blue">
-                
-            </div>
-
-            <div id="emo">
-                
-            </div>
-
-            <div id="red">
-                
-            </div>
+            </ul>
         </section>
 
-        <section id="gif">
+        <section id="videos">
             <div>
                 <!--<img src="../static/images/wow.gif" alt="">-->
-                <video id="video" width="300" height="222" mute="false">
-                    <source src="../static/images/wow.mp4" type="video/mp4" />
+                <video id="hommevert" width="400" height="300" mute="false">
+                    <source src="../static/images/videos/hommevert.mp4" type="video/mp4" />
+                </video>
+                <video id="wow" width="400" height="300" mute="false">
+                    <source src="../static/images/videos/wow.mp4" type="video/mp4" />
+                </video>
+                <video id="okay" width="400" height="300" mute="false">
+                    <source src="../static/images/videos/okay.mp4" type="video/mp4" />
+                </video>
+                <video id="dorian" width="400" height="300" mute="false">
+                    <source src="../static/images/videos/dorian.mp4" type="video/mp4" />
+                </video>
+                <video id="mv1" width="400" height="300" mute="false">
+                    <source src="../static/images/videos/mv1.mp4" type="video/mp4" />
+                </video>
+                <video id="mv2" width="400" height="300" mute="false">
+                    <source src="../static/images/videos/mv2.mp4" type="video/mp4" />
+                </video>
+                <video id="mv3" width="400" height="300" mute="false">
+                    <source src="../static/images/videos/mv3.mp4" type="video/mp4" />
+                </video>
+                <video id="mv4" width="400" height="300" mute="false">
+                    <source src="../static/images/videos/mv4.mp4" type="video/mp4" />
+                </video>
+                <video id="mv5" width="400" height="300" mute="false">
+                    <source src="../static/images/videos/mv5.mp4" type="video/mp4" />
                 </video>
             </div>
         </section>
