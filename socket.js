@@ -17,16 +17,21 @@ app.get('/', function(req, res){
 
 io.sockets.on('connection', function (socket, pseudo) {
     
-    socket.on('nouveau_client', function(pseudo) {
+    socket.on('new_client', function (pseudo) {
         pseudo = ent.encode(pseudo);
         socket.pseudo = pseudo;
-        socket.broadcast.emit('nouveau_client', pseudo);
+        socket.broadcast.emit('new_client', pseudo);
     });
 
     socket.on('message', function (message) {
         message = ent.encode(message);
         socket.broadcast.emit('message', {pseudo: socket.pseudo, message: message});
     }); 
+
+    socket.on('image', function (image){
+        console.log('received img', image);
+        socket.broadcast.emit('image', {image: true, buffer: buf.toString('base64')});
+    });
 });
 
 server.listen(port);
