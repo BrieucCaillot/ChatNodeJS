@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home Page</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script type="text/javascript" src="../static/js/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+</head>
+<body>
+    <header>
+	    <h1>AGORA</h1>
+    </header>   
+
+    <main>
+        <section id="zone_chat">
+            <ul>
+                
+            </ul>
+        </section>
+
+        <section id="addimage">
+            <label for="file-input">
+                <img src="https://image.ibb.co/eoiLvk/picture.png"/>
+            </label>
+
+            <input id="file-input" type="file" style="display: none;" />
+        </section>
+
+        <section id="stylizing">
+            <h2>CHANGE BACKGROUND COLOR</h2>
+            <div id="skyblue">
+                
+            </div>
+
+            <div id="blue">
+                
+            </div>
+
+            <div id="emo">
+                
+            </div>
+
+            <div id="red">
+                
+            </div>
+        </section>
+
+        <section id="gif">
+            <div>
+                <!--<img src="../static/images/wow.gif" alt="">-->
+                <video width="400" height="222" autoplay loop>
+                    <source src="../static/images/wow.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </section>
+    </main>
+
+    <form action="/" method="post" id="formulaire_chat">
+        <input type="text" name="message" id="message" placeholder="Votre message..." autofocus required autocomplete="off"/>
+    </form>
+
+	<script type="text/javascript" src="../static/js/client.js"></script>
+</body>
+</html> 

@@ -1,50 +1,36 @@
 var express = require('express'); 
 var app = express();
 var server = require('http').createServer(app);
-var io = require('socket.io')(server);
+var io = require('socket.io').listen(server);
+var ent = require('ent');
 var port = 8080;
-
-io.on('connection', function(socket){
-	console.log('new socket');
-
-	/*socket.on('message', function(data){
-		console.log('Server : new event \'test\' received with value');
-		console.log(data);
-
-		socket.emit('response', {
-			success : true,
-			message : data.msg,
-			timestamp_received : data.timestamp,
-			timestamp_sent : new Date().getTime(),
-			response : 'hello'
-		});
-	});*/
-
-	socket.on('message', function(message){
-		console.log('received', message);
-		io.emit('newmessage', message);
-	});
-});
 
 app.use('/static/css', express.static(__dirname + '/assets/css'));
 app.use('/static/js', express.static(__dirname + '/assets/js'));
 app.use('/static/fonts', express.static(__dirname + '/assets/fonts'));
 app.use('/static/images', express.static(__dirname + '/assets/images'));
 
-app.get('/index', function(req, res){
-	res.sendFile(__dirname + '/html/index.html');
-});
-
-app.get('/contact', function(req, res){
-	res.sendFile(__dirname + '/html/contact.html');
-});
-
 app.get('/', function(req, res){
-	res.sendFile(__dirname + '/html/socket.html');
+	res.sendFile(__dirname + '/index.html');
+});
+
+io.sockets.on('connection', function (socket, pseudo) {
+    // Dès qu'on nous donne un pseudo, on le stocke en variable de session et on informe les autres personnes
+    socket.on('nouveau_client', function(pseudo) {
+        pseudo = ent.encode(pseudo);
+        socket.pseudo = pseudo;
+        socket.broadcast.emit('nouveau_client', pseudo);
+    });
+
+    // Dès qu'on reçoit un message, on récupère le pseudo de son auteur et on le transmet aux autres personnes
+    socket.on('message', function (message) {
+        message = ent.encode(message);
+        socket.broadcast.emit('message', {pseudo: socket.pseudo, message: message});
+    }); 
 });
 
 server.listen(port);
-	console.log('Server listening on port ' + port);
+	console.log('Server listening on port' + port);
 
 
 
