@@ -53,6 +53,10 @@ main {
     background-color: #000;
 }
 
+#zone_chat p {
+    margin: 19px 30px;
+}
+
 h2 {
     text-align: center;
     margin: 0 auto;

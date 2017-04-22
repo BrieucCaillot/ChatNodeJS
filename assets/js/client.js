@@ -1,9 +1,10 @@
-var socket = io.connect('localhost:1337');
+var socket = io.connect('http://localhost:1337');
 
 var pseudo = prompt('Quel est votre pseudo ?');
     while (pseudo == null) {
         var pseudo = prompt('Rentrez votre pseudo.');
-}
+    }
+socket.emit('new_client', pseudo);
 
 socket.on('message', function(data) {
     insereMessage(data.pseudo, data.message);
