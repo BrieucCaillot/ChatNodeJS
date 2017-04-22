@@ -127,6 +127,8 @@ jQuery(document).ready(function($) {
     	};
 
     	setTimeout(videoend, 5000);
+
+   
 		
 	});
 
