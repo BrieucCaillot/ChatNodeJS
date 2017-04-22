@@ -1,4 +1,4 @@
-var socket = io.connect('https://ide.c9.io/betournator/agora');
+var socket = io.connect('https://chatnodejs-betournator.c9users.io/');
 
 var pseudo = prompt('Quel est votre pseudo ?');
     while (pseudo == null) {
