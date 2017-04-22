@@ -126,7 +126,9 @@ jQuery(document).ready(function($) {
         	$("#okay").attr("muted", "true");
     	};
 
-    	setTimeout(videoend, 10000);
+    	setTimeout(videoend, 5000);
+
+   
 		
 	});
 
