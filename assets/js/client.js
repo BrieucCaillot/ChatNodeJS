@@ -3,13 +3,14 @@ var socket = io.connect('http://localhost:1337');
 var pseudo = prompt('Quel est votre pseudo ?');
     while (pseudo == null) {
         var pseudo = prompt('Rentrez votre pseudo.');
-}
+    }
+socket.emit('new_client', pseudo);
 
 socket.on('message', function(data) {
     insereMessage(data.pseudo, data.message);
 })
 
-socket.on('nouveau_client', function(pseudo) {
+socket.on('new_client', function(pseudo) {
     $('#zone_chat').append('<p><em>' + pseudo + ' a rejoint le Chat !</em></p>');
 })
 
