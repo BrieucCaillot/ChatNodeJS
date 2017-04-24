@@ -7,7 +7,7 @@ var pseudo = prompt('Quel est votre pseudo ?');
 socket.emit('new_client', pseudo);
 
 socket.on('message', function(data) {
-    insereMessage(data.pseudo, data.message);
+    insertMessage(data.pseudo, data.message);
 })
 
 socket.on('new_client', function(pseudo) {
@@ -17,12 +17,12 @@ socket.on('new_client', function(pseudo) {
 $('#formulaire_chat').submit(function () {
     var message = $('#message').val();
     socket.emit('message', message); 
-    insereMessage(pseudo, message); 
+    insertMessage(pseudo, message); 
     $('#message').val('').focus(); 
     return false; 
 });
 
-function insereMessage(pseudo, message) {
+function insertMessage(pseudo, message) {
     $('#zone_chat ul').append('<li><strong>' + pseudo + '</strong> ' + " : " + message + '</li>');
    
     $('#zone_chat').scrollTop($('#zone_chat')[0].scrollHeight);
