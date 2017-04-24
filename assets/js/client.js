@@ -11,7 +11,7 @@ socket.on('message', function(data) {
 })
 
 socket.on('new_client', function(pseudo) {
-    $('#zone_chat').append('<p><em>' + pseudo + ' a rejoint le Chat !</em></p>');
+    $('#zone_chat ul').append('<li>' + pseudo + ' a rejoint le Chat </li>');
 })
 
 $('#formulaire_chat').submit(function () {
