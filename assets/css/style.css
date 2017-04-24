@@ -29,7 +29,7 @@ main {
     margin-top: -2%
 }
 
-.transition {
+body {
     -webkit-transition: 1s; /* Safari */
         transition: 1s;
 }
@@ -51,10 +51,15 @@ main {
     padding: 2px 10px;
     border-radius: 5px;
     background-color: #000;
+    text-transform: uppercase;
 }
 
 #zone_chat p {
     margin: 19px 30px;
+}``
+
+.size {
+    font-size: 20px;
 }
 
 h2 {
@@ -140,6 +145,7 @@ video {
     right: 1%;
     margin-top: 17%;
     display: none;
+    font-size: 30px;
 }
 
 .emoji-list li {
@@ -183,6 +189,81 @@ video {
     margin: 11px 12px;
     display: inline-block;
 }
+
+body.blue1{ background-color: #0053BF; }
+body.blue1 #zone_chat strong{ color: #FFF; background-color: #0053BF; }
+
+body.blue2{ background-color: #00377F; }
+body.blue2 #zone_chat strong{ color: #FFF; background-color: #00377F; }
+
+body.blue3{ background-color: #006EFF; }
+body.blue3 #zone_chat strong{ color: #FFF; background-color: #006EFF; }
+
+body.blue4{ background-color: #001C40; }
+body.blue4 #zone_chat strong{ color: #FFF; background-color: #001C40; }
+
+body.blue5{ background-color: #0063E5; }
+body.blue5 #zone_chat strong{ color: #FFF; background-color: #0063E5; }
+
+body.orange1{ background-color: #BF7A00; }
+body.orange1 #zone_chat strong{ color: #FFF; background-color: #BF7A00; }
+
+body.orange2{ background-color: #7F5100; }
+body.orange2 #zone_chat strong{ color: #FFF; background-color: #7F5100; }
+
+body.orange3{ background-color: #FFA300; }
+body.orange3 #zone_chat strong{ color: #FFF; background-color: #FFA300; }
+
+body.orange4{ background-color: #402900; }
+body.orange4 #zone_chat strong{ color: #FFF; background-color: #402900; }
+
+body.orange5{ background-color: #E59200; }
+body.orange5 #zone_chat strong{ color: #FFF; background-color: #E59200; }
+
+body.red1{ background-color: #BF0004; }
+body.red1 #zone_chat strong{ color: #FFF; background-color: #BF0004; }
+
+body.red2{ background-color: #7F0002; }
+body.red2 #zone_chat strong{ color: #FFF; background-color: #7F0002; }
+
+body.red3{ background-color: #FF0005; }
+body.red3 #zone_chat strong{ color: #FFF; background-color: #FF0005; }
+
+body.red4{ background-color: #400001; }
+body.red4 #zone_chat strong{ color: #FFF; background-color: #400001; }
+
+body.red5{ background-color: #E50004; }
+body.red5 #zone_chat strong{ color: #FFF; background-color: #E50004; }
+
+body.green1{ background-color: #00BF6C; }
+body.green1 #zone_chat strong{ color: #FFF; background-color: #00BF6C; }
+
+body.green2{ background-color: #007F48; }
+body.green2 #zone_chat strong{ color: #FFF; background-color: #007F48; }
+
+body.green3{ background-color: #00FF90; }
+body.green3 #zone_chat strong{ color: #FFF; background-color: #00FF90; }
+
+body.green4{ background-color: #004024; }
+body.green4 #zone_chat strong{ color: #FFF; background-color: #004024; }
+
+body.green5{ background-color: #00E581; }
+body.green5 #zone_chat strong{ color: #FFF; background-color: #00E581; }
+
+body.yellow1{ background-color: #BFBD00; }
+body.yellow1 #zone_chat strong{ color: #FFF; background-color: #BFBD00; }
+
+body.yellow2{ background-color: #7F7E00; }
+body.yellow2 #zone_chat strong{ color: #FFF; background-color: #7F7E00; }
+
+body.yellow3{ background-color: #FFFD00; }
+body.yellow3 #zone_chat strong{ color: #FFF; background-color: #FFFD00; }
+
+body.yellow4{ background-color: #403F00; }
+body.yellow4 #zone_chat strong{ color: #FFF; background-color: #403F00; }
+
+body.yellow5{ background-color: #E5E300; }
+body.yellow5 #zone_chat strong{ color: #FFF; background-color: #E5E300; }
 
 #stylizing #blue1 {
     background-color: #0053BF;
